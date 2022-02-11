@@ -1,0 +1,24 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: secrettemplates.gitopscreds.galasa.dev
+spec:
+  group: gitopscreds.galasa.dev
+  versions:
+    - name: v1alpha1
+      served: true
+      storage: true
+      schema:
+        # schema used for validation
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                mike:
+                  type: string
+  names:
+    kind: SecretTemplate
+    plural: secrettemplates
+  scope: Namespaced
